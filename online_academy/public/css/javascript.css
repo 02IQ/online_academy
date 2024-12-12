@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Oswald", serif;
+    font-weight: 400;
+}
+
+header {
+    box-shadow: 0 6px 25px 10px rgba(0, 0, 0, .2);
+}
+
+.container {
+    margin: 0 133px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn_nav {
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.6s;
+    border: 2px solid black;
+}
+
+:hover.btn_nav {
+    background-color: rgb(255, 255, 255);
+    transition: 0.6s;
+    color: black;
+}
+
+
+.green_bg {
+    background-color: rgba(228, 204, 166, 0.61);
+    border-radius: 50px;
+    margin: 80px 0;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+.txt_in_rect {
+    font-size: 30px;
+}
+
+.flex_in_rect {
+    display: flex;
+    align-items: center;
+    padding: 20px 45px;
+    gap: 30px;
+}
+
+.h_in_rect {
+    width: 800px;
+    font-size: 72px;
+    margin-bottom: 66px;
+}
+
+.btn_in_rect {
+    font-size: 36px;
+    border-radius: 20px;
+    border: 5px solid rgb(255, 255, 255);
+    background-color: rgb(221, 197, 161);
+    padding: 29px 90px;
+    cursor: pointer;
+    margin-top: 150px;
+    transition: 0.6s;
+    box-shadow: 0px 4px 20px 0px rgb(255, 255, 255);
+}
+
+:hover.btn_in_rect {
+    background-color: rgb(172, 139, 90);
+    border: 5px solid rgb(224, 224, 224);
+    transition: 0.6s;
+    box-shadow: 0px 4px 20px 0px rgb(121, 101, 72);
+
+}
+
+.h_main_Info {
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.circle {
+    background: rgba(228, 204, 166, 1.00);
+    border-radius: 50%;
+    box-shadow: 0px 4px 20px 0px rgb(165, 137, 92);
+    height: 50px;
+    width: 50px;
+    margin-right: 15px;
+}
+
+
+.cont_info {
+    display: flex;
+    flex-direction: column;
+    max-width: 620px;
+    margin-top: 70px;
+}
+
+
+.cont_info p {
+    color: rgb(112, 111, 111);
+}
+
+.main_info_curs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.h_in_info {
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+    margin-bottom: 18px;
+    width: 745px;
+}
+
+.nastavnik {
+    text-align: center;
+    font-size: 28px;
+    margin: 70px 0;
+}
+
+.nastavnik p {
+    color: rgb(112, 111, 111);
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.container_for_otzovs {
+    margin: 0 222px;
+}
+
+.rewiew {
+    padding: 30px 60px;
+    border: 3px solid rgb(201, 160, 99);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px 0px rgb(201, 160, 99);
+    margin-bottom: 50px;
+}
+
+.btn_otzov {
+    background-color: rgb(221, 197, 161);
+    padding: 15px 45px;
+    border: none;
+    border-radius: 20px;
+    font-size: 26px;
+    margin: 20px 0;
+    transition: 1s;
+    cursor: pointer;
+    margin-bottom: 50px;
+    width: 300px;
+}
+
+:hover.btn_otzov {
+    background-color: rgb(172, 139, 90);
+    transition: 0.6s;
+}
+
+#user_name {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.header_otzov {
+    margin-top: 100px;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.input_otzov {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+textarea {
+    margin-top: 20px;
+    min-width: 800px;
+    max-width: 800px;
+    min-height: 200px;
+    width: 800px;
+    height: 200px;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 24px;
+}
+
+/* Код андрюхи для футера */
+
+.blockfoot {
+    display: flex;
+    box-shadow: 0 6px 25px 10px rgba(0, 0, 0, .2);
+    padding: 23px 241px 58px 179px;
+}
+
+.textfoot {
+    font-size: 20px;
+    width: 578px;
+    margin: 11px 0 32px 85px;
+}
+
+.socseti {
+    margin-left: 85px;
+}
+
+.columnfoot2 {
+    margin-left: 500px;
+}
+
+.contact {
+    font-size: 24px;
+}
+
+.info_contact {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.img_foot {
+    margin-right: 7px;
+}
+
+.copyright {
+    background-color: #262626;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px;
+}
+
+.copyr {
+    color: #4A4A4A;
+}
