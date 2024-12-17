@@ -27,8 +27,8 @@
                     <h2><a href="/" style="color: black;">Онлайн-Академия</a></h2>
                 </div>
                 <div class="butons_header">
-                    <a href="/auth" class="btn_nav">Войти</a>
-                    <a href="/registration" class="btn_nav">Зарегестрироваться</a>
+                    <a href="/login" class="btn_nav">Войти</a>
+                    <a href="/register" class="btn_nav">Зарегестрироваться</a>
                 </div>
             </div>
         </div>
@@ -36,14 +36,15 @@
     <main>
         <h1 class="title">Вход</h1>
         <div class="auth_wrap">
-                <form class="form_style" id="loginForm">
+                <form action="{{ url('login') }}" method="POST"class="form_style">
+                @csrf
                     <label for="email">Почта</label><br>
                     <input type="email" id="email" name="email" required><br>
                     <label for="password">Пароль</label><br>
                     <input type="password" id="password" name="password" required><br>
                     <button type="submit" class="btn_auth">Войти</button>
                 </form>
-                <h2 class="reg">Нет аккаунта? <a href="/registration" class="reg_a">Зарегестрируйтесь!</a></h2>
+                <h2 class="reg">Нет аккаунта? <a href="/register" class="reg_a">Зарегестрируйтесь!</a></h2>
         </div>
     </main>
 </body>

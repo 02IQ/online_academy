@@ -83,7 +83,7 @@ label {
 }
 
 input[type="email"],
-input[type="text"],
+input[type="name"],
 input[type="password"] {
     color: rgb(0, 0, 0);
     font-size: 18px;

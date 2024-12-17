@@ -22,10 +22,12 @@ class MainController extends Controller
     public function python_rewiew(Request $p_rewiew)
     {
         $valid = $p_rewiew->validate([
+            'name' => 'required|min:3|max:50',
             'message' => 'required|min:15|max:1000'
         ]);
 
         $rewiew_python = new Rewiews();
+        $rewiew_python->name = $p_rewiew->input('name');
         $rewiew_python->message = $p_rewiew->input('message');
 
         $rewiew_python->save();
@@ -41,10 +43,12 @@ class MainController extends Controller
     public function javascript_rewiew(Request $js_rewiew)
     {
         $valid = $js_rewiew->validate([
+            'name' => 'required|min:3|max:50',
             'message' => 'required|min:15|max:1000'
         ]);
 
         $javascript_rewiew = new Rewiews();
+        $javascript_rewiew->name = $js_rewiew->input('name');
         $javascript_rewiew->message = $js_rewiew->input('message');
 
         $javascript_rewiew->save();
@@ -61,10 +65,12 @@ class MainController extends Controller
     public function java_rewiew(Request $j_rewiew)
     {
         $valid = $j_rewiew->validate([
+            'name' => 'required|min:3|max:50',
             'message' => 'required|min:15|max:1000'
         ]);
 
         $java_rewiew = new Rewiews();
+        $java_rewiew->name = $j_rewiew->input('name');
         $java_rewiew->message = $j_rewiew->input('message');
 
         $java_rewiew->save();
@@ -80,10 +86,12 @@ class MainController extends Controller
     public function c_sharpe_rewiew(Request $c_rewiew)
     {
         $valid = $c_rewiew->validate([
+            'name' => 'required|min:3|max:50',
             'message' => 'required|min:15|max:1000'
         ]);
 
         $c_sharpe_rewiew = new Rewiews();
+        $c_sharpe_rewiew->name = $c_rewiew->input('name');
         $c_sharpe_rewiew->message = $c_rewiew->input('message');
 
         $c_sharpe_rewiew->save();

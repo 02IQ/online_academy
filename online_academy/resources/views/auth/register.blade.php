@@ -17,7 +17,6 @@
         <link rel="stylesheet" href="{{ asset('css/auth_registration.css') }}">
     <title>Регистрация</title>
 </head>
-
 <body>
     <header>
         <div class="container">
@@ -27,8 +26,8 @@
                     <h2><a href="/" style="color: black;">Онлайн-Академия</a></h2>
                 </div>
                 <div class="butons_header">
-                    <a href="/auth" class="btn_nav">Войти</a>
-                    <a href="/registration" class="btn_nav">Зарегестрироваться</a>
+                    <a href="/login" class="btn_nav">Войти</a>
+                    <a href="/register" class="btn_nav">Зарегестрироваться</a>
                 </div>
             </div>
         </div>
@@ -36,17 +35,17 @@
     <main>
         <h1 class="title">Регистрация</h1>
         <div class="reg_wrap">
-            <form class="form_style" id="loginForm">
+        <form action="{{ url('register') }}" method="POST" class="form_style">
+                @csrf
                 <label for="email">Почта</label><br>
                 <input type="email" id="email" name="email" required><br>
-                <label for="text">Имя</label><br>
-                <input type="text" id="text" name="text"><br>
-                <label for="text">Фамилия</label><br>
-                <input type="text" id="text" name="text"><br>
+                <label for="name">Имя Фамилия</label><br>
+                <input type="name" id="name" name="name" required><br>
                 <label for="password">Пароль</label><br>
                 <input type="password" id="password" name="password" required><br>
                 <button type="submit" class="btn_reg">Зарегестрироваться</button>
             </form>
+            <h2 class="reg">Уже зарегестрированы? <a href="/login" class="reg_a">Войти!</a></h2>
         </div>
     </main>
 </body>

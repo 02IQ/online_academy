@@ -1,5 +1,5 @@
 @extends('layout')
-
+<?php use Illuminate\Support\Facades\Auth;?>
 <head>
     <link rel="stylesheet" href="{{ asset('css/java.css') }}">
     @section('title')Курс "Java-разработчик"@endsection
@@ -87,30 +87,39 @@
                 <div class="rewiew">
                     <div class="h_in_info">
                         <div class="circle"></div>
-                        <h3>Иван Иванов</h3>
+                        <h3>{{ $el->name }}</h3>
                     </div>
-                    <p>{{ $el->message }}</p>
+                    <p class="rewiew_title">{{ $el->message }}</p>
                 </div>
             </div>
         @endforeach
         <h1 class="header_otzov">Оставьте отзыв о пройденном курсе</h1>
-        @if ($errors->any())
-            <div class="allert_errors">
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li class="error_name">{{ $error }}</li>
-                    @endforeach
-                </ul>
+
+        @if (Auth::check())
+
+            @if ($errors->any())
+                <div class="allert_errors">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li class="error_name">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <form action="/java" method="post" class="input_otzov">
+                @csrf
+                <label name="name">Ваше имя:</label>
+                <input type="name" id="name" name="name" required><br>
+                <label>Отзыв: </label>
+                <textarea name="message" id="message"></textarea>
+                <button class="btn_otzov" type="submit">Отправить отзыв</button>
+            </form>
+        @else
+            <div class="rewiew_auth">
+                <h2 class="rewiew_auth">Что бы оставить отзыв, <a href="/login" class="rewiew_auth">войдите </a>или <a
+                        href="/register" class="rewiew_auth">зарагистрируйтесь.</a></h2>
             </div>
         @endif
-        <form action="/java" method="post" class="input_otzov">
-            @csrf
-            <label>Ваше имя:</label>
-            <p id="user_name">Иван Иванов</p>
-            <label>Отзыв: </label>
-            <textarea name="message" id="message"></textarea>
-            <button class="btn_otzov" type="submit">Отправить отзыв</button>
-        </form>
     </div>
 </main>
 

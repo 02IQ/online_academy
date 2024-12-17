@@ -1,8 +1,9 @@
 <?php
-
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'App\Http\Controllers\MainController@home');
+Route::get('/', [MainController::class, 'home'])->name('home');
 
 Route::get('/python', 'App\Http\Controllers\MainController@python');
 Route::post('/python', 'App\Http\Controllers\MainController@python_rewiew')->name('python'); //ОТЗЫВЫ ДЛЯ PYTHON
@@ -16,10 +17,11 @@ Route::post('/java', 'App\Http\Controllers\MainController@java_rewiew')->name('j
 Route::get('/c_sharpe', 'App\Http\Controllers\MainController@c_sharpe');
 Route::post('/c_sharpe', 'App\Http\Controllers\MainController@c_sharpe_rewiew')->name('c_sharpe');//ОТЗЫВЫ ДЛЯ C#
 
-Route::get('/auth', function () {
-    return view('auth');
-});
+Route::get('/login', [RegisterController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [RegisterController::class, 'login']);
 
-Route::get('/registration', function () {
-    return view('registration');
-});
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+
+Route::post('/logout', [RegisterController::class, 'logout'])->name('logout');

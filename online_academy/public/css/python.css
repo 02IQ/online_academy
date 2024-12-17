@@ -207,6 +207,19 @@ header {
     font-size: 20px;
 }
 
+input{
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    padding-left: 10px;
+    min-height: 40px;
+    min-width: 800px;
+    max-width: 800px;
+    margin-bottom: 19px;
+    margin-top: 19px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
 textarea {
     margin-top: 20px;
     min-width: 800px;
@@ -219,49 +232,15 @@ textarea {
     font-size: 24px;
 }
 
-/* Код андрюхи для футера */
-
-.blockfoot {
-    display: flex;
-    box-shadow: 0 6px 25px 10px rgba(0, 0, 0, .2);
-    padding: 23px 241px 58px 179px;
-}
-
-.textfoot {
-    font-size: 20px;
-    width: 578px;
-    margin: 11px 0 32px 85px;
-}
-
-.socseti {
-    margin-left: 85px;
-}
-
-.columnfoot2 {
-    margin-left: 500px;
-}
-
-.contact {
+.rewiew_auth{
+    color: black;
+    margin-top: 40px;
+    margin-bottom: 60px;
     font-size: 24px;
 }
 
-.info_contact {
-    margin-top: 15px;
-    font-size: 18px;
-}
-
-.img_foot {
-    margin-right: 7px;
-}
-
-.copyright {
-    background-color: #262626;
-    color: white;
-    font-size: 16px;
-    text-align: center;
-    padding: 15px;
-}
-
-.copyr {
-    color: #4A4A4A;
+a.rewiew_auth{
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
 }
