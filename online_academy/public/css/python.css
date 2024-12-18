@@ -244,3 +244,13 @@ a.rewiew_auth{
     font-size: 24px;
     font-weight: bold;
 }
+
+.name_rewiew_input{
+    border: none;
+    font-size: 24px;
+    padding-left: 0px;
+}
+
+.name_rewiew_input:focus{
+    outline: none;
+}

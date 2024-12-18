@@ -19,10 +19,15 @@ class RegisterController extends Controller
         // Валидация входящих данных
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:users,email',
             'password' => 'required|string|min:6|confirmed',
         ]);
 
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors(['email' => 'Этот email уже зарегистрирован'])
+                ->withInput();
+        }
         // Создание нового пользователя
         $user = User::create([
             'name' => $request->name,
@@ -35,7 +40,6 @@ class RegisterController extends Controller
         return redirect('/');
     }
 
-    
     public function showLoginForm()
     {
         return view('auth.login');

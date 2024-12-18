@@ -105,8 +105,7 @@
             @endif
             <form action="/javascript" method="post" class="input_otzov">
                 @csrf
-                <label name="name">Ваше имя:</label>
-                <input type="name" id="name" name="name" required><br>
+                <input type="name" id="name" name="name" value="{{ Auth::user()->name }}" readonly class="name_rewiew_input"><br>
                 <label>Отзыв: </label>
                 <textarea name="message" id="message"></textarea>
                 <button class="btn_otzov" type="submit">Отправить отзыв</button>
