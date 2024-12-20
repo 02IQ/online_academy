@@ -19,15 +19,18 @@ class RegisterController extends Controller
         // Валидация входящих данных
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email',
+            'email' => [
+                'required',
+                'email',
+                function ($attribute, $value, $fail) {
+                    if (User::whereEmail($value)->count() > 0) {
+                        $fail($attribute . 'Этот email уже зарегистрирован');
+                    }
+                },
+            ],
             'password' => 'required|string|min:6|confirmed',
         ]);
 
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors(['email' => 'Этот email уже зарегистрирован'])
-                ->withInput();
-        }
         // Создание нового пользователя
         $user = User::create([
             'name' => $request->name,
